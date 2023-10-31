@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+   <div>
+        <label>First name</label>
+        <input type="text" id="Fname"/><br>
+        <label>Second name</label>
+        <input type="text" id="Sname"/><br>
+        <label>Email</label>
+        <input type="email" id="email"/><br>
+        
+
+        <label>select country</label>
+        <select id="select">
+        <option value="india">india</option>
+        <option value="japan">japan</option>
+        <option value="england">england</option>
+        </select>
+        <br>
+
+
+         <label>gender</label>
+         Male<input type="radio" value="male" name="gender">
+         female<input type="radio" value="female" name="gender">
+         <br>
+
+         
+        subject:
+        <input type="checkbox" name="subject" value="english">english<br>
+        <input type="checkbox" name="subject" value="phy">phy<br>
+        <input type="checkbox" name="subject" value="chem">chem<br>
+         
+        
+        <button id="btn">submit</button>
+
+    </div>
+<table border="1">
+    <thead>
+        <tr>
+            <th>fName</th>
+            <th>sname</th>
+            <th>email</th>
+            <th>country</th>
+            <th>gender</th>
+            <th>subject</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+    <script>
+        const fname=document.querySelector('#Fname');
+        const sname=document.querySelector('#Sname');
+        const email=document.querySelector('#email');
+        const select=document.querySelector('#select');
+        const gender=document.getElementsByName('gender');
+        const subject=document.getElementsByName('subject');
+
+
+const a=document.querySelector('#btn')
+a.addEventListener('click',e=>{
+    const tr=document.createElement('tr');
+    const f1name=document.createElement('td');
+    const s1name=document.createElement('td');
+    const email1=document.createElement('td');
+    const select1=document.createElement('td');
+    const gender1=document.createElement('td');
+    const subject1=document.createElement('td');
+ 
+
+    f1name.innerText=fname.value;
+    s1name.innerText=sname.value;
+    email1.innerText=email.value;
+    select1.innerText=select.value;
+
+for(let i=0;i<gender.length;i++){
+    if(gender[i].checked){
+        gender1.innerText=gender[i].value;
+    }
+}
+for(let i=0;i<subject.length;i++){
+    if(subject[i].checked){
+        subject1.innerText=subject1.innerText+" "+subject[i].value;
+    }
+}
+tr.append(f1name,s1name,email1,select1,gender1,subject1);
+document.querySelector('table tbody').append(tr);
+})
+    </script>
+</body>
+</html>
