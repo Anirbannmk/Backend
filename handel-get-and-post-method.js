@@ -7,8 +7,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.post('/signup',(req,res)=>{
     const{name,gender,age}=req.body;
     const user={name,gender,age };
-
-    fs.appendFile('./users.txt',JSON.stringify(user)+'\n',(err)=>{
+     console.log(user);
+    fs.appendFile('./users.txt',JSON.stringify(user),(err)=>{
         if (err){
             res.send(err);
         } 
