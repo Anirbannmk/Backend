@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+</head>-
+<body>
+    <form action="http://localhost:4046/signup" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        
+        <label for="gender">Gender:</label>
+        <input type="radio" name="gender" value="male" required>
+        
+        <label for="male">Male</label>
+        <input type="radio" name="gender" value="female" required>
+        <label for="female">Female</label><br>
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
